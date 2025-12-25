@@ -6,7 +6,7 @@ import urllib.parse
 
 STATE_FILE = "state.json"
 
-TOKEN = os.getenv("TELEGRAM_TOKEN")
+TOKEN = os.getenv("TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 # מקורות התחלה (בנקים + ביטוח) — אפשר להוסיף עוד אחר כך
