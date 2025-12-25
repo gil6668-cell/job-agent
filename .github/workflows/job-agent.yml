@@ -22,7 +22,7 @@ jobs:
 
       - name: Run agent
         env:
-          TELEGRAM_TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python main.py
 
