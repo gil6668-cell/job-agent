@@ -6,8 +6,8 @@ import urllib.parse
 
 STATE_FILE = "state.json"
 
-TOKEN = os.getenv("TOKEN")
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+TOKEN = os.getenv("TOKEN")  # <-- שם הסוד: TOKEN
+CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")  # <-- שם הסוד: TELEGRAM_CHAT_ID
 
 # מקורות התחלה (בנקים + ביטוח) — אפשר להוסיף עוד אחר כך
 SOURCES = {
@@ -48,13 +48,13 @@ def save_state(state: dict):
 
 
 def page_hash(html: str) -> str:
-    """יוצר 'טביעת אצבע' לדף כדי לדעת אם השתנה"""
+    """יוצר טביעת אצבע לדף כדי לדעת אם השתנה"""
     return hashlib.sha256(html.encode("utf-8", errors="ignore")).hexdigest()
 
 
 def main():
     if not TOKEN or not CHAT_ID:
-        raise Exception("Missing TELEGRAM_TOKEN or TELEGRAM_CHAT_ID")
+        raise Exception("Missing TOKEN or TELEGRAM_CHAT_ID")
 
     state = load_state()
     hashes = state.get("hashes", {})
